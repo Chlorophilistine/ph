@@ -17,7 +17,7 @@ There solution folder "UnitTests" featues a further 2 NUnit unit test projects s
 Build in Visual Studio, then run with or without debugging as applicable. The API is configured to be avialble on [https://localhost:44399/api/v1/customers](https://localhost:44399/api/v1/customers).
 
 ## URL Taxonomy
-The API is a lightweight ReST-style, and provides the functionality described in the brief. Customers can be listed, individual customer details retrieved, customer status updated, and notes associated with a customer updated and created. In addition it allows for creation and deletion of customers, as this could be reasonable inferred from the brief.
+The API is a lightweight ReST-style API, providing the functionality described in the brief. Customers can be listed, individual customer details retrieved, customer status updated, and notes associated with a customer updated and created. In addition it allows for creation and deletion of customers, as this could be reasonably inferred from the brief.
 
 /api/v1/customers <- GET
 
@@ -27,14 +27,16 @@ The API is a lightweight ReST-style, and provides the functionality described in
 
 /api/v1/customers/{id}/notes <- GET
 
-/api/v1/notes <- PUT, POST
+/api/v1/notes <- POST
 
-The HTTP verbs assume the usual ReST meaning. The serializer is configured to return XML, or JSON, so you can uesr Postman or RestedClient or your choice of tool to probe the API.
+/api/v1/note/{id} <- PUT
+
+The HTTP verbs assume the usual ReST meaning. The serializer is configured to return XML or JSON, so you can ues Postman or RestedClient or your choice of tool to probe the API.
 
 The API observes the bare minimum in versioning (v1) to allow for future expansion and revision in a fairly painless manner (as opposed to v1 being the root).
 
 ## DI in the API
-The API and data layer are assembled using the MEF composition container, using declaritive attribute based configuration. Please see CusotomerApp.MefContainer for details of how the container catalog is defined, or if adding dependenices.
+The API and data layer are assembled using the MEF composition container, using declaritive attribute-based configuration. Please see CusotomerApp.MefContainer for details of how the container catalog is defined, or if adding dependenices.
 
 ## DI responsibilities
 It is important that any additional controllers or repositories, or any other dependency supplied by MEF, that will be request-scoped use the following attribute at class level
