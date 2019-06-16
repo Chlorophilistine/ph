@@ -34,4 +34,4 @@ The HTTP verbs assume the usual ReST meaning. The serializer is configured to re
 The API observes the bare minimum in versioning (v1) to allow for future expansion and revision in a fairly painless manner (as opposed to v1 being the root).
 
 ## DI in the API
-The API and data layer are assembled using the MEF composition container, using declaritive attirbute based configuration. Please see CusotomerApp.MefContainer for details of how the container catalog is defined, or if adding dependenices.
+The API and data layer are assembled using the MEF composition container, using declaritive attribute based configuration. Please see CusotomerApp.MefContainer for details of how the container catalog is defined, or if adding dependenices.
