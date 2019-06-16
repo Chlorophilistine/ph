@@ -37,7 +37,7 @@ The API observes the bare minimum in versioning (v1) to allow for future expansi
 The API and data layer are assembled using the MEF composition container, using declaritive attribute based configuration. Please see CusotomerApp.MefContainer for details of how the container catalog is defined, or if adding dependenices.
 
 ## DI responsibilities
-It is important that any additional controllers or repositories, or any other dependency supplied by MEF, that will be request-scoped are marked
+It is important that any additional controllers or repositories, or any other dependency supplied by MEF, that will be request-scoped use the following attribute at class level
 
 ```c#
 [PartCreationPolicy(CreationPolicy.NonShared)]
